@@ -1,0 +1,36 @@
+checks:
+  php:
+    code_rating: true
+    duplication: false
+
+filter:
+  excluded_paths:
+    - tests/*
+    - examples/*
+    - vendor/*
+
+build:
+  nodes:
+    analysis:
+      tests:
+        override:
+          - php-scrutinizer-run
+
+    tests-and-coverage:
+      environment:
+        php: '7.1.21'
+
+      dependencies:
+        before:
+          - 'sudo apt-get install -y lsof'
+          - 'composer install'
+          - './vendor/bin/codecept build'
+          - '(cd tests/assets/www && php -S localhost:8080) &'
+
+      tests:
+        override:
+          -
+            command: 'php vendor/bin/codecept run unit --coverage --coverage-xml'
+            coverage:
+              file: 'tests/_output/coverage.xml'
+              format: 'php-clover'
