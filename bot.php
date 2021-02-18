@@ -19,7 +19,7 @@ try {
     ]);
      // APIに接続し、ツイートを投稿する
     $status = $client->post('statuses/update', [
-        'status' => 'heroku試験中！！（By Bot）'."\n".'#プログラミング #駆け出しエンジニアと繋がりたい'."\n".'https://produce-web.net',
+        'status' => 'プログラミングに関する情報を発信中！！'."\n".'ぜひ見てください！'."\n".'#プログラミング #駆け出しエンジニアと繋がりたい'."\n".'https://produce-web.net',
     ]);
      // 投稿したツイートのURLを表示する
     echo "URL: https://twitter.com/{$status->user->screen_name}/status/{$status->id_str}\n";
