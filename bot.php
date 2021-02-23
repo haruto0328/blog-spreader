@@ -5,10 +5,10 @@ require_once 'vendor/autoload.php';
 use mpyw\Cowitter\Client;
 
 
-$consumer_key = 'zjj5h1rSXInbR5wWEXkMyTgkI';
-$consumer_secret = 'FXP2Zm7ONoGkBxEhLS1DSEQ4xkoBGjHgWsqKB0OUTbIZKLE34p';
-$access_token = '1237583956167421953-IS07njFOGEwwHr7W85zaEb9GJeVcyt';
-$access_token_secret = 'Rwq5QvnGzLqTu5znyaiEacWl4V8umBtDQAMrXd0Ct0IRv';
+$consumer_key = 'consumerキー';
+$consumer_secret = 'consumerシークレット';
+$access_token = 'アクセストークン';
+$access_token_secret = 'アクセストークンシークレット';
 
 //Twitterのuser_id
 $user_id = 'harutoman0328';
